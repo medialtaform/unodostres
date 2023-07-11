@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario</title>
+  <style>
+    body {
+      background-color: navy;
+      color: white;
+    }
+    
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function enviarFormulario() {
+      var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value;
+      var telefono = document.getElementById('telefono').value;
+      var timestamp = new Date().toLocaleString();
+      
+      var url = 'https://script.google.com/macros/s/1J2FSs4RyElBT_wRk0JUkm1q1EoYP8OF__B725M3SV3bPa02_f0gSoVeo/exec?Nombre=' + encodeURIComponent(nombre) + '&Email=' + encodeURIComponent(email) + '&Telefono=' + encodeURIComponent(telefono) + '&Fecha=' + encodeURIComponent(timestamp);
+      
+      var img = new Image();
+      img.src = url;
+      
+      alert('Datos enviados exitosamente');
+      
+      return false;
+    }
+  </script>
+</head>
+<body>
+<br>
+    <img src="C:\Mnorder\spin\images/bandera.jpg" >
+    <br>
+  
+  <form onsubmit="return enviarFormulario();">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <br>
+    <label for="telefono">Teléfono:</label>
+    <input type="text" id="telefono" name="telefono" required>
+      <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
